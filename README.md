@@ -1,10 +1,9 @@
 # connect-cgi-mock HTTP接口模拟器
 > 本组件为connect中间件，为本地web前端开发提供模拟HTTP接口。
-> 
 
 ## 快速上手
 > 以gulp-connect搭建本地HTTP服务器为例
-> 
+
 `javascript
 connect.server({
     root: 'dev',
