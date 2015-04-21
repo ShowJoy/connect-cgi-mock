@@ -4,7 +4,7 @@
 ## 快速上手
 > 以gulp-connect搭建本地HTTP服务器为例
 
-`javascript
+```javascript
 connect.server({
     root: 'dev',
     livereload: true,
@@ -22,4 +22,4 @@ connect.server({
         ]
     }
 });
-`
+```
