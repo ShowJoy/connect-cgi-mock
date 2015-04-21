@@ -1,0 +1,28 @@
+{
+  "name": "connect-cgi-mock",
+  "version": "1.0.1",
+  "description": "CGI mock up middleware for connect",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FroadUED/connect-cgi-mock.git"
+  },
+  "keywords": [
+    "CGI",
+    "mock",
+    "connect",
+    "middleware"
+  ],
+  "author": "amoschen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FroadUED/connect-cgi-mock/issues"
+  },
+  "homepage": "https://github.com/FroadUED/connect-cgi-mock",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
+}
