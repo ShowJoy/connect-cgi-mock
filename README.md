@@ -23,3 +23,20 @@ connect.server({
     }
 });
 ```
+
+## CGI模拟示例
+以模拟/api/cgiName为例，配置同上述配置
+CGI模拟数据文件路径为：
+`/src/cgiMock/api/cgiName.js`
+
+数据内容为：
+```javascript
+// this === request
+var url = this.url;
+
+// next(err, data)
+next(null, {
+    test: 'ok',
+    url: url
+});
+```
