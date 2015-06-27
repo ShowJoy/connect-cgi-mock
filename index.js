@@ -1,6 +1,5 @@
 var fs = require('fs'),
     url = require('url'),
-    querystring = require('querystring'),
     _ = require('underscore');
 
 var defaults = {
@@ -101,7 +100,7 @@ function bodyParser(req, next){
 
 // handler cgi file
 function handler(req, next){
-    var urlObj = url.parse(req.url);
+    var urlObj = url.parse(req.url, true);
 
     fs.readFile(req.cgiRoot + '/' + urlObj.pathname + '.js', function(err, file){
         if( err ){
@@ -115,7 +114,7 @@ function handler(req, next){
             var mock = new Function('req', 'next', file.toString());
 
             // add query object to req
-            req.query = querystring.parse(req.url);
+            req.query = urlObj.query;
 
             // run mock
             mock(req, function(err, ret){
