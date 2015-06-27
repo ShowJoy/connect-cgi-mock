@@ -31,12 +31,21 @@ CGI模拟数据文件路径为：
 
 数据内容为：
 ```javascript
-// this === request
-var url = this.url;
+// req is request object
+// see https://nodejs.org/api/http.html#http_http_incomingmessage
+
+// request url
+var url = req.url,
+    // query object, parsed from query string
+    query = req.query,
+    // request data, parsed from request body
+    data = req.data;
 
 // next(err, data)
 next(null, {
     test: 'ok',
-    url: url
+    url: req.url,
+    query: req.query,
+    data: req.data
 });
 ```

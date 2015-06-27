@@ -1,5 +1,6 @@
 var fs = require('fs'),
     url = require('url'),
+    querystring = require('querystring'),
     _ = require('underscore');
 
 var defaults = {
@@ -110,8 +111,15 @@ function handler(req, next){
         }
         
         try{
+            // create mock function from mock file
             var mock = new Function('req', 'next', file.toString());
+
+            // add query object to req
+            req.query = querystring.parse(req.url);
+
+            // run mock
             mock(req, function(err, ret){
+                // stringify result for http response
                 next(err, JSON.stringify(ret));
             });
         } catch(err){
