@@ -49,3 +49,19 @@ next(null, {
     data: req.data
 });
 ```
+
+模拟错误
+```javascript
+// create error object with error message
+var err = new Error('error message');
+
+// error code
+err.code = 12345;
+
+// http status code in response header
+// default code 500, if not manually set
+err.statusCode = 608;
+
+// send error to browser
+next(err);
+```
