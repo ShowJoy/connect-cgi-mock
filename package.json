@@ -4,7 +4,7 @@
   "description": "CGI mock up middleware for connect",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/main.js"
+    "test": "./node_modules/mocha/bin/mocha test/main.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
   "devDependencies": {
     "chai": "^3.0.0",
     "connect": "^3.4.0",
+    "mocha": "^2.2.5",
     "supertest": "^1.0.1"
   }
 }
