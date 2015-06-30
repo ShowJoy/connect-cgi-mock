@@ -1,4 +1,4 @@
-# connect-cgi-mock HTTP接口模拟器[![Build Status](https://travis-ci.org/FroadUED/connect-cgi-mock.svg)](https://travis-ci.org/FroadUED/connect-cgi-mock)
+# connect-cgi-mock HTTP接口模拟器[![Build Status](https://travis-ci.org/FroadUED/connect-cgi-mock.svg?branch=master)](https://travis-ci.org/FroadUED/connect-cgi-mock)
 > 本组件为connect中间件，为本地web前端开发提供模拟HTTP接口。
 
 ## 快速上手
