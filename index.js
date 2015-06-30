@@ -133,5 +133,10 @@ function error(res, err){
     console.error('[connect-cgi-mock] %s %s', err.code, err.message);
 
     res.statusCode = err.statusCode || 500;
-    res.end(err.message);
+    res.setHeader('Content-Type', 'application/json');
+    
+    res.end(JSON.stringify({
+        code:  err.code,
+        message: err.message
+    }));
 }
