@@ -31,7 +31,7 @@ module.exports = function(options){
                 return;
             }
 
-            handler(req, function(err, ret){
+            handler(req, res, function(err, ret){
                 if( err ){
                     error(res, err);
                     return;
@@ -99,7 +99,7 @@ function bodyParser(req, next){
 }
 
 // handler cgi file
-function handler(req, next){
+function handler(req, res, next){
     var urlObj = url.parse(req.url, true);
 
     fs.readFile(req.cgiRoot + '/' + urlObj.pathname + '.js', function(err, file){
@@ -111,13 +111,13 @@ function handler(req, next){
         
         try{
             // create mock function from mock file
-            var mock = new Function('req', 'next', file.toString());
+            var mock = new Function('req', 'res', 'next', file.toString());
 
             // add query object to req
             req.query = urlObj.query;
 
             // run mock
-            mock(req, function(err, ret){
+            mock(req, res, function(err, ret){
                 // stringify result for http response
                 next(err, JSON.stringify(ret));
             });

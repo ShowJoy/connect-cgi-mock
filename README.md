@@ -65,3 +65,17 @@ err.statusCode = 608;
 // send error to browser
 next(err);
 ```
+
+定制HTTP头
+```javascript
+// set special header
+res.setHeader('token', 'yourToken');
+
+// set cookie
+res.setHeader('Set-Cookie', ['a=1', 'b=2']);
+
+// send error to browser
+next(null, {
+    result: 'ok'
+});
+```
