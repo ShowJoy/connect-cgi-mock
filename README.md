@@ -41,12 +41,16 @@ var url = req.url,
     // request data, parsed from request body
     data = req.data;
 
+// get request headers
+var contentType = req.headers['Content-Type'];
+
 // next(err, data)
 next(null, {
     test: 'ok',
     url: req.url,
     query: req.query,
-    data: req.data
+    data: req.data,
+    ct: contentType
 });
 ```
 
