@@ -83,3 +83,13 @@ next(null, {
     result: 'ok'
 });
 ```
+
+模拟慢请求
+```javascript
+// waiting 15s before response
+setTimeout(function(){
+    next(null, {
+        result: 'ok'
+    });
+}, 15000);
+```
