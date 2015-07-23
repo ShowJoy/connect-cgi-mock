@@ -76,7 +76,7 @@ next(err);
 res.setHeader('token', 'yourToken');
 
 // set cookie
-res.setHeader('Set-Cookie', ['a=1', 'b=2']);
+res.setHeader('Set-Cookie', ['a=1', 'b=2']); // 要注意，如果你用chrome在localhost下模拟请求，这样是写不了cookie的，http://stackoverflow.com/questions/1134290/cookies-on-localhost-with-explicit-domain && https://code.google.com/p/chromium/issues/detail?id=56211
 
 // send error to browser
 next(null, {
