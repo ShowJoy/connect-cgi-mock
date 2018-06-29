@@ -111,13 +111,13 @@ function handler(req, res, next){
         
         try{
             // create mock function from mock file
-            var mock = new Function('req', 'res', 'next', file.toString());
+            var mock = new Function('req', 'res', 'fs', 'next', file.toString());
 
             // add query object to req
             req.query = urlObj.query;
 
             // run mock
-            mock(req, res, function(err, ret){
+            mock(req, res, fs, function(err, ret){
                 // stringify result for http response
                 next(err, JSON.stringify(ret));
             });
